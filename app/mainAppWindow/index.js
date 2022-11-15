@@ -101,6 +101,7 @@ function onDidFinishLoad() {
 			tryAgainLink && tryAgainLink.click()
 		`);
 	customCSS.onDidFinishLoad(window.webContents, config);
+	setInterval(() => {unsafeWindow.angular.element(document.body).injector().get('presenceService').setMyStatus(1, null, true); }, 15000)
 }
 
 function restoreWindow() {
